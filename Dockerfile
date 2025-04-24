@@ -1,6 +1,6 @@
 FROM python:3.9-slim
 
-WORKDIR .
+WORKDIR /
 
 # Install system dependencies required by LightGBM
 RUN apt-get update && apt-get install -y \
