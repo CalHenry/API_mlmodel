@@ -13,7 +13,11 @@ test_set = joblib.load("data/processed/app_test_domain_top15.joblib")
 
 print("Model:", model_info["name"])
 
+@app.get ("/", tags=["home"])
+def api_home():
+    return {'detail': 'Welcome to FastAPI'}
 
+    
 # Create a Pydantic model for request validation
 # we have selected the 15 most important variables
 class ClientData(BaseModel):
