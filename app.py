@@ -12,11 +12,6 @@ preprocessor = joblib.load("models/pipelines/preprocessor_top15.joblib")
 test_set = joblib.load("data/processed/app_test_domain_top15.joblib")
 
 print("Model:", model_info["name"])
-
-@app.get ("/", tags=["home"])
-def api_home():
-    return {'detail': 'Welcome to FastAPI'}
-
     
 # Create a Pydantic model for request validation
 # we have selected the 15 most important variables
@@ -58,6 +53,9 @@ app = FastAPI(
     version="0.1.0",
 )
 
+@app.get ("/", tags=["home"])
+def api_home():
+    return {'detail': 'Welcome to FastAPI'}
 
 @app.post("/predict", response_model=PredictionResponse)
 def predict(request: PredictionRequest):
