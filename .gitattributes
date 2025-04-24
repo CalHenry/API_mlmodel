@@ -1,2 +1,3 @@
 lgbm_model_15_info.joblib filter=lfs diff=lfs merge=lfs -text
 app_test_domain_top15.joblib filter=lfs diff=lfs merge=lfs -text
+models/lgbm_model_15_info.joblib filter=lfs diff=lfs merge=lfs -text
