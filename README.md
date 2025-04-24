@@ -1,5 +1,5 @@
 ---
-title: {{title}}
+title: API_mlmodel
 emoji: 🫥
 colorFrom: teal
 colorTo: gray
