@@ -1,7 +1,7 @@
 ---
 title: API_mlmodel
 emoji: 🫥
-colorFrom: teal
+colorFrom: indigo
 colorTo: gray
 sdk: docker
 app_file: app.py
