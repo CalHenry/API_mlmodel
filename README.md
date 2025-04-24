@@ -1,3 +1,13 @@
+---
+title: {{title}}
+emoji: 🫥
+colorFrom: teal
+colorTo: gray
+sdk: docker
+app_file: app.py
+pinned: false
+---
+
 # oc_p7_APItothecloud API
 
 This Space hosts a FastAPI application that predicts credit risk for loan applicants.
