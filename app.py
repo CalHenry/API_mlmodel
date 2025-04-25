@@ -61,7 +61,7 @@ def api_home():
 def predict(request: PredictionRequest):
     try:
         # Convert Pydantic models to a pandas DataFrame
-        input_data = pd.DataFrame([client.dict() for client in request.inputs])
+        input_data = pd.DataFrame([client.model_dump() for client in request.inputs])
 
         # Apply your preprocessing function
         X_test_processed = preprocessor.transform(input_data)
@@ -102,5 +102,8 @@ def predict_by_id(request: ClientIDRequest):
             predict_proba=y_pred_proba.tolist(),
             binary_prediction=y_pred_binary.tolist(),
         )
+    except HTTPException as http_exc:
+        raise http_exc
     except Exception as e:
+        # Handle other exceptions with a 400 status code
         raise HTTPException(status_code=400, detail=str(e))

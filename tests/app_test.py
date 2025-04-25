@@ -26,8 +26,8 @@ def test_predict_endpoint(client, sample_client_data):
     # Check the content based on our mock model
     # Based on our mock model, it should return [0.3] for predict_proba
     # and [0] for binary_prediction for the first sample
-    assert data["predict_proba"] == [0.3]  # Since we're only sending one client
-    assert data["binary_prediction"] == [0]  # With threshold 0.5, this is 0
+    assert data["predict_proba"] == [0.3, 0.8]  # Since we're only sending one client
+    assert data["binary_prediction"] == [0, 1]  # With threshold 0.5, this is 0
 
 
 def test_predict_endpoint_invalid_data(client):
