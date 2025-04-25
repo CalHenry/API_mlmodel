@@ -31,7 +31,10 @@ import requests
 import json
 
 # API endpoint URL
+# (with the streamlit app in the cloud)
 url = "https://huggingface.co/spaces/Calhenry/API_mlmodel/predict"
+# (with the streamlit app in local and the API in the cloud)
+# url = "https://calhenry-api-mlmodel-2.hf.space"
 
 # Sample client data
 client_data = {
