@@ -52,10 +52,8 @@ def test_predict_by_id_endpoint_found(client):
     assert "binary_prediction" in data
 
 
-def test_predict_by_id_endpoint_not_found(client, monkeypatch):
+def test_predict_by_id_endpoint_not_found(client):
     """Test the /predict_by_id endpoint with an ID that doesn't exist."""
-    # Create an error message for debugging
-    
     # Use an ID that doesn't exist
     payload = {"client_id": 999999}
     
