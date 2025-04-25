@@ -64,7 +64,6 @@ def predict(request: PredictionRequest):
         input_data = pd.DataFrame([client.dict() for client in request.inputs])
 
         # Apply your preprocessing function
-        # X_test_processed = cleaning2(input_data, preprocessor_pipeline=preprocessor)
         X_test_processed = preprocessor.transform(input_data)
 
         # Get prediction probabilities
@@ -91,7 +90,7 @@ def predict_by_id(request: ClientIDRequest):
             raise HTTPException(status_code=404, detail="Client ID not found")
 
         # Apply your preprocessing function
-        X_test_processed = cleaning2(client_data, preprocessor_pipeline=preprocessor)
+        X_test_processed = preprocessor.transform(client_data)
 
         # Get prediction probabilities
         y_pred_proba = model_info["best_model"].predict_proba(X_test_processed)[:, 1]
