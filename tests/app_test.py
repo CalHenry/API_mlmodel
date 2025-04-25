@@ -55,17 +55,6 @@ def test_predict_by_id_endpoint_found(client):
 def test_predict_by_id_endpoint_not_found(client, monkeypatch):
     """Test the /predict_by_id endpoint with an ID that doesn't exist."""
     # Create an error message for debugging
-    def mock_cleaning2(*args, **kwargs):
-        # This is a mock version that needs to be defined to replace the undefined cleaning2 in app.py
-        from unittest.mock import MagicMock
-        return MagicMock()
-
-    # Monkeypatch the cleaning2 function
-    import sys
-    import os
-    sys.path.insert(0, os.path.abspath(os.path.dirname(__file__) + "/.."))
-    import app
-    monkeypatch.setattr(app, "cleaning2", mock_cleaning2)
     
     # Use an ID that doesn't exist
     payload = {"client_id": 999999}
