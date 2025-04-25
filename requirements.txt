@@ -6,3 +6,6 @@ pandas
 scikit-learn
 joblib
 lightgbm
+pytest
+pytest-cov
+httpx
